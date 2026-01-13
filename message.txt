@@ -1,0 +1,167 @@
+=== Hand 1 Trace ===
+Agent: DealerBot(EV) | Dealer upcard: 8
+
+SYSTEM DEAL   9 | p= 9 d= 0 | player card 1
+SYSTEM DEAL   8 | p= 9 d= 8 | dealer upcard
+SYSTEM DEAL   3 | p=12 d= 8 | player card 2
+SYSTEM DEAL   ? | p=12 d=19 | dealer hole (hidden)  
+PLAYER HIT    ? | p=12 d=19 | DealerBot(EV) decision
+PLAYER DRAW   4 | p=16 d=19 |
+PLAYER HIT    ? | p=16 d=19 | DealerBot(EV) decision
+PLAYER DRAW  10 | p=26 d=19 |
+
+--- Result ---
+Player total: 26 | Dealer total: 19 | payoff: -1
+Payoff meaning: +1 win, 0 push, -1 loss
+
+=== Hand 2 Trace ===
+Agent: DealerBot(EV) | Dealer upcard: 6
+
+SYSTEM DEAL   9 | p= 9 d= 0 | player card 1
+SYSTEM DEAL   6 | p= 9 d= 6 | dealer upcard
+SYSTEM DEAL   2 | p=11 d= 6 | player card 2
+SYSTEM DEAL   ? | p=11 d= 9 | dealer hole (hidden)
+PLAYER HIT    ? | p=11 d= 9 | DealerBot(EV) decision
+PLAYER DRAW  10 | p=26 d=19 |
+
+--- Result ---
+Player total: 26 | Dealer total: 19 | payoff: -1
+Payoff meaning: +1 win, 0 push, -1 loss
+
+=== Hand 2 Trace ===
+Agent: DealerBot(EV) | Dealer upcard: 6
+
+SYSTEM DEAL   9 | p= 9 d= 0 | player card 1
+SYSTEM DEAL   6 | p= 9 d= 6 | dealer upcard
+SYSTEM DEAL   2 | p=11 d= 6 | player card 2
+SYSTEM DEAL   ? | p=11 d= 9 | dealer hole (hidden)
+PLAYER HIT    ? | p=11 d= 9 | DealerBot(EV) decision
+--- Result ---
+Player total: 26 | Dealer total: 19 | payoff: -1
+Payoff meaning: +1 win, 0 push, -1 loss
+
+=== Hand 2 Trace ===
+Agent: DealerBot(EV) | Dealer upcard: 6
+
+SYSTEM DEAL   9 | p= 9 d= 0 | player card 1
+SYSTEM DEAL   6 | p= 9 d= 6 | dealer upcard
+SYSTEM DEAL   2 | p=11 d= 6 | player card 2
+SYSTEM DEAL   ? | p=11 d= 9 | dealer hole (hidden)
+PLAYER HIT    ? | p=11 d= 9 | DealerBot(EV) decision
+
+=== Hand 2 Trace ===
+Agent: DealerBot(EV) | Dealer upcard: 6
+
+SYSTEM DEAL   9 | p= 9 d= 0 | player card 1
+SYSTEM DEAL   6 | p= 9 d= 6 | dealer upcard
+SYSTEM DEAL   2 | p=11 d= 6 | player card 2
+SYSTEM DEAL   ? | p=11 d= 9 | dealer hole (hidden)
+PLAYER HIT    ? | p=11 d= 9 | DealerBot(EV) decision
+PLAYER DRAW  10 | p=21 d= 9 |
+PLAYER STAND  ? | p=21 d= 9 | DealerBot(EV) decision
+DEALER DRAW  10 | p=21 d=19 |
+
+--- Result ---
+
+SYSTEM DEAL   9 | p= 9 d= 0 | player card 1
+SYSTEM DEAL   6 | p= 9 d= 6 | dealer upcard
+SYSTEM DEAL   2 | p=11 d= 6 | player card 2
+SYSTEM DEAL   ? | p=11 d= 9 | dealer hole (hidden)
+PLAYER HIT    ? | p=11 d= 9 | DealerBot(EV) decision
+PLAYER DRAW  10 | p=21 d= 9 |
+PLAYER STAND  ? | p=21 d= 9 | DealerBot(EV) decision
+DEALER DRAW  10 | p=21 d=19 |
+
+--- Result ---
+Player total: 21 | Dealer total: 19 | payoff: 1
+Payoff meaning: +1 win, 0 push, -1 loss
+
+=== Hand 3 Trace ===
+SYSTEM DEAL   2 | p=11 d= 6 | player card 2
+SYSTEM DEAL   ? | p=11 d= 9 | dealer hole (hidden)
+PLAYER HIT    ? | p=11 d= 9 | DealerBot(EV) decision
+PLAYER DRAW  10 | p=21 d= 9 |
+PLAYER STAND  ? | p=21 d= 9 | DealerBot(EV) decision
+DEALER DRAW  10 | p=21 d=19 |
+
+--- Result ---
+Player total: 21 | Dealer total: 19 | payoff: 1
+Payoff meaning: +1 win, 0 push, -1 loss
+
+=== Hand 3 Trace ===
+Agent: DealerBot(EV) | Dealer upcard: 10
+
+SYSTEM DEAL   5 | p= 5 d= 0 | player card 1
+SYSTEM DEAL  10 | p= 5 d=10 | dealer upcard
+SYSTEM DEAL   8 | p=13 d=10 | player card 2
+PLAYER DRAW  10 | p=21 d= 9 |
+PLAYER STAND  ? | p=21 d= 9 | DealerBot(EV) decision
+DEALER DRAW  10 | p=21 d=19 |
+
+--- Result ---
+Player total: 21 | Dealer total: 19 | payoff: 1
+Payoff meaning: +1 win, 0 push, -1 loss
+
+=== Hand 3 Trace ===
+Agent: DealerBot(EV) | Dealer upcard: 10
+
+SYSTEM DEAL   5 | p= 5 d= 0 | player card 1
+SYSTEM DEAL  10 | p= 5 d=10 | dealer upcard
+SYSTEM DEAL   8 | p=13 d=10 | player card 2
+Player total: 21 | Dealer total: 19 | payoff: 1
+Payoff meaning: +1 win, 0 push, -1 loss
+
+=== Hand 3 Trace ===
+Agent: DealerBot(EV) | Dealer upcard: 10
+
+SYSTEM DEAL   5 | p= 5 d= 0 | player card 1
+SYSTEM DEAL  10 | p= 5 d=10 | dealer upcard
+SYSTEM DEAL   8 | p=13 d=10 | player card 2
+Agent: DealerBot(EV) | Dealer upcard: 10
+
+SYSTEM DEAL   5 | p= 5 d= 0 | player card 1
+SYSTEM DEAL  10 | p= 5 d=10 | dealer upcard
+SYSTEM DEAL   8 | p=13 d=10 | player card 2
+SYSTEM DEAL   ? | p=13 d=13 | dealer hole (hidden)
+PLAYER HIT    ? | p=13 d=13 | DealerBot(EV) decision
+PLAYER DRAW  10 | p=23 d=13 |
+
+--- Result ---
+Player total: 23 | Dealer total: 13 | payoff: -1
+Payoff meaning: +1 win, 0 push, -1 loss
+
+SYSTEM DEAL   ? | p=13 d=13 | dealer hole (hidden)
+PLAYER HIT    ? | p=13 d=13 | DealerBot(EV) decision
+PLAYER DRAW  10 | p=23 d=13 |
+
+--- Result ---
+Player total: 23 | Dealer total: 13 | payoff: -1
+Payoff meaning: +1 win, 0 push, -1 loss
+
+=== Demo: 5 exchanges, 7 hands per exchange ===
+Scoring per hand: WIN=+1, PUSH=0, LOSS=-1
+--- Result ---
+Player total: 23 | Dealer total: 13 | payoff: -1
+Payoff meaning: +1 win, 0 push, -1 loss
+
+=== Demo: 5 exchanges, 7 hands per exchange ===
+Scoring per hand: WIN=+1, PUSH=0, LOSS=-1
+
+
+=== Demo: 5 exchanges, 7 hands per exchange ===
+Scoring per hand: WIN=+1, PUSH=0, LOSS=-1
+
+=== Demo: 5 exchanges, 7 hands per exchange ===
+Scoring per hand: WIN=+1, PUSH=0, LOSS=-1
+
+
+Exchange 1: DealerBot(EV) score=+2 (W4/L2/P1), PlayerBot(Naive) score=+1 (W4/L3/P0) -> Winner: DealerBot(EV)
+Exchange 1: DealerBot(EV) score=+2 (W4/L2/P1), PlayerBot(Naive) score=+1 (W4/L3/P0) -> Winner: DealerBot(EV)
+Exchange 2: DealerBot(EV) score=-2 (W2/L4/P1), PlayerBot(Naive) score=+1 (W3/L2/P2) -> Winner: PlayerBot(Naive)
+Exchange 3: DealerBot(EV) score=+3 (W4/L1/P2), PlayerBot(Naive) score=+0 (W3/L3/P1) -> Winner: DealerBot(EV)
+Exchange 4: DealerBot(EV) score=-6 (W0/L6/P1), PlayerBot(Naive) score=+1 (W4/L3/P0) -> Winner: PlayerBot(Naive)
+Exchange 5: DealerBot(EV) score=-2 (W2/L4/P1), PlayerBot(Naive) score=+3 (W5/L2/P0) -> Winner: PlayerBot(Naive)
+
+Series result: DealerBot(EV) wins=2, PlayerBot(Naive) wins=3, ties=0
+
+PS E:\Programming\CPSC-481-BlackjackProject>

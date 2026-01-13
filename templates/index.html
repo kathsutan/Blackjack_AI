@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎴 Blackjack Arena</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- header -->
+        <header class="header">
+            <h1>🎴 Blackjack Arena</h1>
+            <p>Where AI agents compete in strategic blackjack gameplay</p>
+        </header>
+
+        <!-- nav -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" data-tab="play">Play Hand</button>
+            <button class="tab-btn" data-tab="match">Run Tournament</button>
+            <button class="tab-btn" data-tab="about">About</button>
+        </nav>
+
+        <!-- play hand section -->
+        <section id="play-tab" class="tab-content active">
+            <div class="content-grid">
+                <div class="control-panel control-bar">
+                    <h2>Choose Player Strategy</h2>
+
+                    <!-- select agent -->
+                    <div class="controls-row controls-agents">
+                        <div id="agent-selector" class="agent-selector agent-selector-row"></div>
+                    </div>
+
+                    <!-- seed -->
+                    <div class="controls-row controls-seed">
+                        <div class="control-group compact-group">
+                            <label for="seed-input">Seed (optional)</label>
+                            <input type="number" id="seed-input" placeholder="Leave empty for random">
+                        </div>
+                    </div>
+
+                    <!-- play btn -->
+                    <div class="controls-row controls-play">
+                        <button id="play-btn" class="btn btn-primary btn-large">
+                            Play Hand
+                        </button>
+                    </div>
+
+                    <div id="loading" class="loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Playing hand...</p>
+                    </div>
+                </div>
+
+                <!-- game table -->
+                <div class="game-display">
+                    <div id="game-content" style="display: none;">
+                        <div class="blackjack-table">
+                            <!-- dealer -->
+                            <div class="table-section dealer-section">
+                                <div class="section-label">DEALER</div>
+                                <div id="dealer-cards" class="card-area"></div>
+                                <div id="dealer-total" class="section-total">Total: 0</div>
+                            </div>
+
+                            <!-- actions -->
+                            <div class="table-center">
+                                <div id="action-indicator" class="action-indicator"></div>
+                            </div>
+
+                            <!-- player -->
+                            <div class="table-section player-section">
+                                <div class="section-label">PLAYER</div>
+                                <div id="player-cards" class="card-area"></div>
+                                <div id="player-total" class="section-total">Total: 0</div>
+                            </div>
+                        </div>
+
+                        <!-- results -->
+                        <div class="game-info">
+                            <div id="result-box" class="result-box"></div>
+                            <div id="agent-info" class="agent-info"></div>
+                        </div>
+
+                        <!-- step by step actions -->
+                        <div id="steps-trace" class="steps-trace"></div>
+                    </div>
+
+                    <div id="welcome-message" class="welcome-message welcome-black">
+                        <h3>Welcome to Blackjack Arena!</h3>
+                        <p>Select an agent and click "Play Hand" to see them in action.</p>
+                        <ul>
+                            <li><strong>DealerBot (EV):</strong> Uses mathematical calculations to make optimal decisions</li>
+                            <li><strong>PlayerBot (Naive):</strong> Follows a simple strategy of hitting below 16</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- tournament section -->
+        <section id="match-tab" class="tab-content">
+            <div id="tournament-welcome" class="welcome-message welcome-white">
+                <h2>Tournament Mode</h2>
+                <p>Compare the two agents over multiple hands to see which strategy performs better.</p>
+            </div>
+
+            <div class="control-panel tournament-panel">
+                <h2>Run Tournament</h2>
+
+                <div class="control-group">
+                    <label for="hands-input">Number of Hands:</label>
+                    <input type="number" id="hands-input" value="1000" min="100" max="10000">
+                </div>
+
+                <div class="control-group">
+                    <label for="tournament-seed-input">Seed (optional):</label>
+                    <input type="number" id="tournament-seed-input" placeholder="Leave empty for random">
+                </div>
+
+                <button id="run-tournament-btn" class="btn btn-primary btn-large">
+                    🏆 Run Tournament
+                </button>
+
+                <div id="tournament-loading" class="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Running tournament...</p>
+                </div>
+            </div>
+
+            <div id="tournament-results" class="tournament-results" style="display: none;">
+                <h2>🏆 Tournament Results</h2>
+                <div class="results-grid" id="results-grid"></div>
+            </div>
+        </section>
+
+        <!-- about section -->
+        <section id="about-tab" class="tab-content">
+            <div class="about-content">
+                <h2>About Blackjack Arena</h2>
+
+                <div class="info-card">
+                    <h3>❓ How to Use</h3>
+                    <p><strong>Play Hand:</strong> Watch a single hand play out with step-by-step trace</p>
+                    <p><strong>Run Tournament:</strong> Compare agents over many hands to see average performance</p>
+
+                    <h3>📜 Game Rules</h3>
+                    <ul>
+                        <li>Single deck blackjack</li>
+                        <li>Hit/Stand only (no double down or split)</li>
+                        <li>Dealer hits on totals &lt; 17</li>
+                        <li>Dealer stands on hard 17</li>
+                        <li>Dealer hits on soft 17 (50% probability)</li>
+                        <li>Payoff: +1 for win, 0 for push, -1 for loss</li>
+                    </ul>
+
+                    <h3>Dealer (EV Agent)</h3>
+                    <p>Uses <strong>Expected Value (EV) calculations</strong> to determine the optimal move at each decision point.</p>
+                    <ul>
+                        <li>Analyzes remaining deck composition</li>
+                        <li>Calculates probability of each dealer outcome</li>
+                        <li>Chooses the move with highest expected return</li>
+                    </ul>
+
+                    <h3>Player (Naïve Agent)</h3>
+                    <p>Uses a <strong>simple fixed strategy</strong> that doesn't require complex calculations.</p>
+                    <ul>
+                        <li>Hits if hand total ≤ 16</li>
+                        <li>Stands if hand total &gt; 16</li>
+                        <li>Fast and easy to understand</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <p>Blackjack Arena © 2026 by Sean DeFrank, Hershey Gagneja, Katherine Sutandar, Isaac Lee</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
